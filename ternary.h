@@ -85,6 +85,7 @@ void uint32_to_tr32( tr32 * rt, uint32_t v);
 /*
  * Общие функции для троичных чисел из тритов
  */
+void clear_tr8(tr8 *tr); 
 void clear_tr16(tr16 *t);
 void clear_tr32(tr32 *t);
 
@@ -104,16 +105,20 @@ int cmp_trs(tr32 a, tr32 b);
 /*
  * Отладочные функции для троичных чисел из тритов
  */
+void vlog8( unsigned char * buf, uint8_t v );
 void vlog16( unsigned char * buf, uint16_t v );
 void vlog32( unsigned char * buf, uint32_t v );
+void vlog64( unsigned char * buf, int64_t v );
 
+void tlog8(unsigned char * buf, tr8 ts );
 void tlog16(unsigned char * buf, tr16 ts );
 void tlog32(unsigned char * buf, tr32 ts );
 
 void buflog8( uint8_t * buf );
 void buflog16( uint8_t * buf );
 
-//tr8 memory_read(struct cpu_trit *c, tr32 addr_trit);
+//viv- error compile 
+//void memory_read(struct cpu_trit *c, tr32 addr_trit, tr8 * data);
 //int8_t memory_write(struct cpu_trit *c, tr32 addr_trit, tr8 data);
 
 #endif  /* TERNARY_H */

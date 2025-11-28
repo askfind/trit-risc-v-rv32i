@@ -1,3 +1,11 @@
+/*
+* Проект 'TRIT-RISC-V : T-RV32I' на языке C
+*
+* Автор: 		 Vladimir V.
+* E-mail: 	  	 askfind@ya.ru   
+* 
+*/
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdint.h>

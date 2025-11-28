@@ -1,11 +1,19 @@
+/*
+* Проект 'TRIT-RISC-V : T-RV32I' на языке C
+*
+* Автор: 		 Vladimir V.
+* E-mail: 	  	 askfind@ya.ru   
+* 
+*/
+
 
 #include <assert.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 
-#include "ternary.h"
 #include "cpu_trit.h"
+#include "ternary.h"
 #include "bit_trit_parser.h"
 #include "inst.h"
 #include "log.h"
@@ -918,7 +926,7 @@ void buflog16( uint8_t * buf ) {
 		};     	
 }
 
- memory_read(struct cpu_trit *c, tr32 addr_trit, tr8 * data) {
+void memory_read(struct cpu_trit *c, tr32 addr_trit, tr8 * data) {
 
     int64_t addr_binary = tr32_to_int64(addr_trit) ;
 	
@@ -936,7 +944,7 @@ void buflog16( uint8_t * buf ) {
 		}
 		return;
     }
-    //viv+ next version
+    //viv+ TODO add code next version
     //else if (addr_binary >= MMIO_BASE && addr_binary < MMIO_BASE + MMIO_SIZE) {
     //    return mmio_read(addr_binary);  // Чтение из MMIO
     //}
@@ -966,7 +974,7 @@ int8_t memory_write(struct cpu_trit *c, tr32 addr_trit, tr8 data) {
         }
         return 0;
     }
-    //viv+ next version
+    //viv+ TODO add code next version
     //else if (addr_binary >= MMIO_BASE && addr_binary < MMIO_BASE + MMIO_SIZE) {
     //    return mmio_read(addr_binary);  // Чтение из MMIO
     //}

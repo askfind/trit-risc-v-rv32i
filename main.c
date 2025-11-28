@@ -1,3 +1,16 @@
+/*
+* Проект 'TRIT-RISC-V : T-RV32I' на языке C
+*
+* Дата созд.   : 24.10.2025
+* Дата редакт. : 27.11.2025
+*
+* Версия:        0.04
+*
+* Автор: 		 Vladimir V.
+* E-mail: 	  	 askfind@ya.ru   
+* 
+*/                              
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -76,7 +89,7 @@ void dump_memory(FILE *fh, tr8 *mem, int size)
 {
 	static uint8_t buf4[4] = {0};
 	
-	fprintf(fh, "\nDump ternary RAM[%0i]:\n",size);	
+	fprintf(fh, "\nDump ternary 8-trits RAM[%0i]\n",size);	
     
     int ii = 0; 
     
@@ -85,7 +98,7 @@ void dump_memory(FILE *fh, tr8 *mem, int size)
 #if 1
 	/* Вывод в девятиричном виде */
 	if ( ii % 4 == 0 ) { 
-		fprintf(fh,"% 8d : ",i);
+		fprintf(fh,"% 9d :n ",i);
 	}       	
 	tr8_to_nine_string(buf4,mem[i]);
 	buflog4(buf4);
@@ -205,7 +218,7 @@ int main(int argc, char *argv[]){
 	//viv+ dbg ---------
     if( flag_inst_trits > 0 ) {            
             trs_dbg_oper(&cput);
-            return 0;
+            //return 0;
     }
 
 #if 0 //viv+ TODO новый CLI из Emulator  
