@@ -1,0 +1,24 @@
+#ifndef INST_H
+#define INST_H
+
+#include <stdint.h>
+
+#include "ternary.h"
+#include "inst.h"
+
+typedef void (*inst_func)(struct cpu_trit *c, uint32_t inst);
+
+struct inst_data {
+    char *bit_pattern;
+    inst_func func;
+};
+
+extern const struct inst_data inst_list[];
+
+/* Бинарные */
+uint32_t pc_read(struct cpu_trit *c);
+uint32_t reg_read(struct cpu_trit *c, uint8_t reg_idx);
+uint32_t rom_read_w(struct cpu_trit *c);
+
+
+#endif  /* INST_H */
